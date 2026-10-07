@@ -23,26 +23,27 @@ WEATHER_CODES = {
 
 # func which gets the weather from open-meteo
 def fetch_weather():
-    url = "https://api.open-mateo.com/v1/forecast"
+    url = "https://api.open-meteo.com/v1/forecast"
     params = {
         "latitude": LATITUDE,
         "longitude": LONGITUDE,
-        "current": "temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed,weather_code",
-        "temperature_unit": "farenheit",
+        "current": "temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,weather_code",
+        "temperature_unit": "fahrenheit",
         "wind_speed_unit": "mph",
     }
     try:
         response = requests.get(url, params=params, timeout=5)
         response.raise_for_status()
-        current = response.json()["current"]
+        data = response.json()
+        current = data.get("current") or {}
         return {
-            "temp": current["temperature_2m"],
-            "feels_like": current["attarent_temperature"],
+            "temp": float(current["temperature_2m"]),
+            "feels_like": float(current["apparent_temperature"]),
             "humidity": current["relative_humidity_2m"],
-            "wind": current["wind_speed_10m"],
+            "wind": float(current["wind_speed_10m"]),
             "description": WEATHER_CODES.get(current["weather_code"], "Unknown"),
         }
-    except (requests.RequestException, KeyError):
+    except (requests.RequestException, KeyError, TypeError, ValueError):
         return None
 
 def make_bar(percent, width=20):

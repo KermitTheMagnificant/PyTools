@@ -10,3 +10,4 @@
 <h3>About PyHub</h3>
 <p>AI Usage: Moderate, used to help with API stuff as I didn't know how to do that before now.</p>
 <p>Terminal based app which displays current time, weather, and system resource usage. The default longitude and latitude is for the New York metropolitan area, so making sure to change that to your own.</p>
+<p>NOTE: This was my first time using a python virtual environment, if you feel that its in the wrong place, feel free to tell me</p>

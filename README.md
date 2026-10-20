@@ -1,5 +1,5 @@
 <h1>Welcome to PyTools!</h1>
-<p>The purpose of PyTools is for me to put all of my Python applications in one neat repository. So far, there is only PySpense, my Python/SQLite Expense tracker.<br></p>
+<p>The purpose of PyTools is for me to put all of my Python applications in one neat repository. So far, there is only PySpense, my Python/SQLite Expense tracker, and PyLiveTV, a live tv viewer.<br></p>
 <p>Note on AI usage: I make an effort to not just "copy and paste" code, all AI usage is for learning purposes, and AI usage is marked below each about section.</p>
 
 
@@ -11,3 +11,7 @@
 <p>AI Usage: Moderate, used to help with API stuff as I didn't know how to do that before now.</p>
 <p>Terminal based app which displays current time, weather, and system resource usage. The default longitude and latitude is for the New York metropolitan area, so making sure to change that to your own.</p>
 <p>NOTE: This was my first time using a python virtual environment, if you feel that its in the wrong place, feel free to tell me</p>
+
+<h3>About PyLiveTV</h3>
+<p>AI Usage: Heavy, mostly API and SQLite stuff. Threw together the HTML quickly, I do plan on remaking it.</p>
+<p>Uses uvicorn to make a nice Live TV web app using IPTV.</p>

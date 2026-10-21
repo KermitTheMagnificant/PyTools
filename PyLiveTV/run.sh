@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source ../.venv/bin/activate
 cd "$(dirname "$0")"
 
 if [ -d venv ]; then
